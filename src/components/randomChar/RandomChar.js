@@ -4,7 +4,7 @@ import mjolnir from '../../resources/img/mjolnir.png';
 import MarvelService from '../../services/MarvelService';
 import { Id } from '../../utils/constants';
 import { getRandomNumInRange } from '../../utils/utils';
-// import { getRandomIndexFromArray, getCharacter } from '../../utils/utils';
+
 class RandomChar extends Component {
 	constructor(props) {
 		super(props);
@@ -18,25 +18,6 @@ class RandomChar extends Component {
 	marvelService = new MarvelService();
 
 	updateChar = () => {
-		// this.marvelService
-		// 	.getAllCharacters()
-		// 	.then(res => {
-		// 		const array = res;
-		// 		const number = getRandomIndexFromArray(array);
-		// 		const character = getCharacter(array, number);
-		// 		const {name, description, thumbnail, homepage, wiki} = character;
-
-		// 		this.setState({
-		// 			name: name,
-		// 			description: description,
-		// 			thumbnail: thumbnail,
-		// 			homepage: homepage,
-		// 			wiki: wiki
-		// 		});
-		// 	});
-
-
-		/* вариант из урока*/
 
 		const id = getRandomNumInRange(Id.MAX, Id.MIN);
 		this.marvelService
