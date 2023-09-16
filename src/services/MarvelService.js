@@ -10,7 +10,11 @@ class MarvelService {
 	};
 
 	getAllCharacters = () => {
-		return this.getResource('https://gateway.marvel.com:443/v1/public/characters?apikey=8c6835281072553d27512c94876408b1');
+		return this.getResource('https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=210&apikey=8c6835281072553d27512c94876408b1');
+	};
+
+	getCharacter = (id) => {
+		return this.getResource(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=8c6835281072553d27512c94876408b1`);
 	};
 }
 
