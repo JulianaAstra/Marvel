@@ -1,0 +1,8 @@
+const Id = {
+	MIN: 1011000,
+	MAX: 1011400
+};
+
+const DESCRIPTION_MAX_LENGTH = 100;
+
+export {Id , DESCRIPTION_MAX_LENGTH};
