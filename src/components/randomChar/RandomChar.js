@@ -8,11 +8,6 @@ import { Id } from '../../utils/constants';
 import { getRandomNumInRange } from '../../utils/utils';
 
 class RandomChar extends Component {
-	constructor(props) {
-		super(props);
-		this.updateChar(); // так делать не правильно!
-	}
-
 	state = {
 		char: {},
 		loading: true,
@@ -20,6 +15,14 @@ class RandomChar extends Component {
 	};
 
 	marvelService = new MarvelService();
+
+	componentDidMount() {
+		this.updateChar();
+	}
+
+	componentWillUnmount() {
+
+	}
 
 	updateChar = () => {
 		this.setState({loading: true});
@@ -40,7 +43,8 @@ class RandomChar extends Component {
 	onCharLoaded = (char) => {
 		this.setState({
 			char,
-			loading: false
+			loading: false,
+			error: false
 		});
 	};
 
@@ -64,7 +68,7 @@ class RandomChar extends Component {
                       Or choose another one
 					</p>
 					<button className="button button__main">
-						<div className="inner">try it</div>
+						<div className="inner" onClick={this.updateChar}>try it</div>
 					</button>
 					<img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
 				</div>
