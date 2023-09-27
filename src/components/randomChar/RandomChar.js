@@ -27,6 +27,7 @@ class RandomChar extends Component {
 	updateChar = () => {
 		this.setState({loading: true});
 		const id = getRandomNumInRange(Id.MAX, Id.MIN);
+		this.onCharLoading();
 		this.marvelService
 			.getCharacter(id)
 			.then(this.onCharLoaded)

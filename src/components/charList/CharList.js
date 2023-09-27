@@ -39,15 +39,20 @@ class CharList extends Component {
 		const notFoundImg = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
 		const isNotFoundImg = (thumbnail) => {
 			if (thumbnail === notFoundImg) {
-				return {'objectFit' : 'contain'};
+				return {'objectFit' : 'unset'};
 			}
 			return {'objectFit' : 'cover'};
 		};
 
-		const characters = arr.map((char) => <li key={char.id} className="char__item">
-			<img src={char.thumbnail} alt={char.name} style={isNotFoundImg(char.thumbnail)}/>
-			<div className="char__name">{char.name}</div>
-		</li>);
+		const characters = arr.map((char) =>
+			<li key={char.id}
+				className="char__item"
+				onClick={() => this.props.onCharSelected(char.id)}>
+				<img src={char.thumbnail}
+					alt={char.name}
+					style={isNotFoundImg(char.thumbnail)}/>
+				<div className="char__name">{char.name}</div>
+			</li>);
 
 		return (
 			<ul className="char__grid">
