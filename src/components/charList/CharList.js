@@ -3,7 +3,7 @@ import { Component } from 'react';
 import ErrorMessage from '../errorMessage/errorMessage';
 import Spinner from '../spinner/spinner';
 import './charList.scss';
-
+import PropTypes from 'prop-types';
 class CharList extends Component {
 
 	state = {
@@ -112,5 +112,9 @@ class CharList extends Component {
 		);
 	}
 }
+
+CharList.propTypes = {
+	onCharSelected: PropTypes.func.isRequired
+};
 
 export default CharList;

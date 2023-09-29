@@ -6,7 +6,7 @@ import mjolnir from '../../resources/img/mjolnir.png';
 import MarvelService from '../../services/MarvelService';
 import { Id } from '../../utils/constants';
 import { getRandomNumInRange } from '../../utils/utils';
-
+import PropTypes from 'prop-types';
 class RandomChar extends Component {
 	state = {
 		char: {},
@@ -111,6 +111,10 @@ const View = ({char}) => {
 			</div>
 		</div>
 	);
+};
+
+View.propTypes = {
+	char: PropTypes.object
 };
 
 export default RandomChar;

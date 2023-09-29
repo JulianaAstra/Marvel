@@ -2,7 +2,7 @@ import { DESCRIPTION_MAX_LENGTH } from '../utils/constants';
 class MarvelService {
 	_apiBase = 'https://gateway.marvel.com:443/v1/public/';
 	_apiKey = 'apikey=8c6835281072553d27512c94876408b1';
-	_limit = 10;
+	_limit = 9;
 	_baseOffset = 210;
 
 	getResource = async (url) => {
