@@ -31,6 +31,9 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "rules": {
+          "react/prop-types": 0
+        }
     }
 }
