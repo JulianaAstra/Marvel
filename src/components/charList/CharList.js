@@ -60,6 +60,18 @@ class CharList extends Component {
 		});
 	};
 
+	itemRefs = [];
+
+	setRef = (ref) => {
+		this.itemRefs.push(ref);
+	};
+
+	focusOnItem = (id) => {
+		this.itemRefs.forEach(item => item.classList.remove('char__item_selected'));
+		this.itemRefs[id].classList.add('char__item_selected');
+		this.itemRefs[id].focus();
+	};
+
 	renderItems(arr) {
 		const notFoundImg = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
 		const isNotFoundImg = (thumbnail) => {
@@ -69,10 +81,21 @@ class CharList extends Component {
 			return {'objectFit' : 'cover'};
 		};
 
-		const characters = arr.map((char) =>
+		const characters = arr.map((char, i) =>
 			<li key={char.id}
 				className="char__item"
-				onClick={() => this.props.onCharSelected(char.id)}>
+				tabIndex={0}
+				ref={this.setRef}
+				onClick={() => {
+					this.props.onCharSelected(char.id);
+					this.focusOnItem(i);
+				}}
+				onKeyDown={(e) => {
+					if (e.key === ' ' || e.key === 'Enter') {
+						this.props.onCharSelected(char.id);
+						this.focusOnItem(i);
+					}
+				}}>
 				<img src={char.thumbnail}
 					alt={char.name}
 					style={isNotFoundImg(char.thumbnail)}/>
