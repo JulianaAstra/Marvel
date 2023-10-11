@@ -21,12 +21,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,7 +35,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.17",
-    "@babel/plugin-transform-private-property-in-object": "7.22.11",
-    "eslint-plugin-react": "^7.33.2"
+    "@babel/plugin-transform-private-property-in-object": "7.22.11"
   }
 }
