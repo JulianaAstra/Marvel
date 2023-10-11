@@ -42,7 +42,6 @@
   "devDependencies": {
     "@babel/core": "^7.22.17",
     "@babel/plugin-transform-private-property-in-object": "7.22.11",
-    "eslint": "^8.49.0",
     "eslint-plugin-react": "^7.33.2"
   }
 }
