@@ -25,7 +25,6 @@ const RandomChar = () => {
   }, []);
 
 	const updateChar = () => {
-    // setLoading(true);
 		const id = getRandomNumInRange(Id.MAX, Id.MIN);
 		onCharLoading();
 		marvelService
